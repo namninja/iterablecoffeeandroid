@@ -21,7 +21,7 @@ import java.util.List;
 public class OrderCoffee extends AppCompatActivity {
     TextView menuText;
     String token = IterableApi.getInstance().getAuthToken();
-    String email = "nam.ngo+droid4@iterable.com";
+    String email = "nam.ngo+droid4@gmail.com";
 
     // Create an array of CommerceItem objects
     CommerceItem item1 = new CommerceItem(

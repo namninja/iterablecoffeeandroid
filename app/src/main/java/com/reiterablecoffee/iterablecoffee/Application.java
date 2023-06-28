@@ -16,7 +16,7 @@ import okhttp3.Response;
 
 public class Application extends android.app.Application {
 
-    String email = "nam.ngo+droid4@iterable.com";
+    String email = "nam.ngo+droid4@gmail.com";
     String myToken = "";
     public void onCreate(){
         super.onCreate();
@@ -76,7 +76,7 @@ public class Application extends android.app.Application {
                 );
 
         IterableConfig config = configBuilder.build();
-        IterableApi.initialize(getApplicationContext(),"69512234b58e403f9359122424959196",config);
+        IterableApi.initialize(getApplicationContext(),"api",config);
 
     }
 
