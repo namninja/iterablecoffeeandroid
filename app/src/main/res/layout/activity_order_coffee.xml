@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background_color"
+    tools:context=".OrderCoffee">
+
+    <Button
+        android:id="@+id/buttonAddCart"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="36dp"
+        android:fontFamily="@font/audiowide"
+        android:onClick="addToCart"
+        android:text="@string/buttonAddCart"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPurchase"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+    <Button
+        android:id="@+id/buttonPurchase"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="92dp"
+        android:fontFamily="@font/audiowide"
+        android:onClick="completePurchase"
+        android:text="@string/buttonPurchase"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/audiowide"
+        android:text="@string/textMenu"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coffeeLogo" />
+
+    <ImageView
+        android:id="@+id/coffeeLogo"
+        android:layout_width="126dp"
+        android:layout_height="139dp"
+        android:contentDescription="@string/coffeeLogo2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027"
+        app:srcCompat="@drawable/coffee_logo" />
+
+    <TextView
+        android:id="@+id/textLatte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/text_padding"
+        android:text="@string/latte"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textMocha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textCappuccino" />
+
+    <TextView
+        android:id="@+id/textCoffee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/text_padding"
+        android:text="@string/coffee"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textCappuccino"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textMenu" />
+
+    <TextView
+        android:id="@+id/textCappuccino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/text_padding"
+        android:text="@string/cappuccino"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textLatte"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textCoffee" />
+
+    <TextView
+        android:id="@+id/textMocha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/text_padding"
+        android:text="@string/mocha"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAddCart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLatte" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Iterable Coffee</string>
+    <string name="newUser">Create New User</string>
+    <string name="loginUser">Log In User</string>
+    <string name="msg">user info</string>
+    <string name="greeting">Let\'s get caffeinated</string>
+    <string name="coffee">Coffee: $5.00</string>
+    <string name="cappuccino">Cappuccino: $8.50</string>
+    <string name="latte">Latte: $8.50</string>
+    <string name="mocha">Mocha: $9.00</string>
+    <string name="coffeeLogo2">coffee logo</string>
+    <string name="buttonAddCart">Add to Cart</string>
+    <string name="buttonPurchase">Purchase</string>
+    <string name="textMenu">Menu</string>
+
+</resources>
