@@ -5,7 +5,14 @@ import android.util.Log;
 import com.iterable.iterableapi.IterableApi;
 import com.iterable.iterableapi.IterableAuthHandler;
 import com.iterable.iterableapi.IterableConfig;
+import com.iterable.iterableapi.IterableHelper;
+
 import android.content.Context;
+
+import androidx.annotation.NonNull;
+
+import org.json.JSONObject;
+
 import java.io.IOException;
 
 import okhttp3.MediaType;
@@ -16,7 +23,7 @@ import okhttp3.Response;
 
 public class Application extends android.app.Application {
 
-    String email = "nam.ngo+droid4@gmail.com";
+    String email = "testing.iterableapps@gmail.com";
     String myToken = "";
     public void onCreate(){
         super.onCreate();
@@ -69,14 +76,14 @@ public class Application extends android.app.Application {
                     public void onTokenRegistrationFailed(Throwable object) {
                         Log.d("Auth token failure", myToken);
                         if (!myToken.equals("")) {
-                            IterableApi.getInstance().setEmail(email,myToken);
+                            IterableApi.getInstance().setEmail(email,null);
                         }
                     }
                 }
                 );
 
         IterableConfig config = configBuilder.build();
-        IterableApi.initialize(getApplicationContext(),"api",config);
+        IterableApi.initialize(getApplicationContext(),"<api Key>",config);
 
     }
 

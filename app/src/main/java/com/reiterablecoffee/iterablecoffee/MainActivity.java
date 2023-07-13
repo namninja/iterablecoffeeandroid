@@ -17,7 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
-    String email = "nam.ngo+droid4@gmail.com";
+    String email = "testing.iterableapps@gmail.com";
     private TextView greeting;
     String token = IterableApi.getInstance().getAuthToken();
     //String token = PreferenceManager.getInstance(getApplicationContext()).getMyGlobalVariable();
@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
 //        JSONObject dataFields = new JSONObject();
 //        String firstName = "Thor";
 //        String lastName = "Odinson";
-//        String phoneNumber = "";
-//        String email = "nam.ngo+droid4@gmail.com";
+//        String phoneNumber = "+15555555";
+//        String email = "testing.iterableapps@gmail.com";
 //        String userId = "knownAndroid-4444";
 //
 //        dataFields.put("firstName", firstName);
@@ -89,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
         String firstName = "Thor";
         String lastName = "Odinson";
         String favoriteCafeBeverage = "mocha";
-        String phoneNumber = "";
-        String email = "nam.ngo+droid4@gmail.com";
+        String phoneNumber = "+15555555";
+        String email = "testing.iterableapps@gmail.com";
 
 
 
