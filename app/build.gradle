@@ -34,8 +34,8 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:32.1.1')
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
-    implementation 'com.iterable:iterableapi:3.4.11'
-    implementation 'com.iterable:iterableapi-ui:3.4.11'
+    implementation 'com.iterable:iterableapi:3.4.14'
+    implementation 'com.iterable:iterableapi-ui:3.4.14'
     implementation 'com.google.android.gms:play-services-cronet:18.0.1'
     implementation 'com.google.firebase:firebase-messaging:23.1.2'
     testImplementation 'junit:junit:4.+'

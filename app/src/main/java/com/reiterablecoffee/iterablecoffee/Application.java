@@ -25,6 +25,7 @@ public class Application extends android.app.Application {
 
     String email = "testing.iterableapps@gmail.com";
     String myToken = "";
+    String token = "";
     public void onCreate(){
         super.onCreate();
         //Initialize API
@@ -32,6 +33,7 @@ public class Application extends android.app.Application {
 
         IterableConfig.Builder configBuilder = new IterableConfig.Builder()
                 .setLogLevel(Log.VERBOSE)
+                .setExpiringAuthTokenRefreshPeriod((long) 10)
                 .setAuthHandler(new IterableAuthHandler() {
                     @Override
                     public String onAuthTokenRequested() {
@@ -45,8 +47,7 @@ public class Application extends android.app.Application {
                                 .method("POST", body)
                                 .addHeader("Content-Type", "application/json")
                                 .build();
-                        String token = IterableApi.getInstance().getAuthToken();
-                        if (token == null) {
+
                             try (Response response = client.newCall(request).execute()) {
                                 assert response.body() != null;
                                 token = response.body().string();
@@ -59,10 +60,7 @@ public class Application extends android.app.Application {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
-                        } else {
-                            Log.d("Auth token sticky", token);
-                            return token;
-                        }
+
 
                     }
 
@@ -83,7 +81,7 @@ public class Application extends android.app.Application {
                 );
 
         IterableConfig config = configBuilder.build();
-        IterableApi.initialize(getApplicationContext(),"<api Key>",config);
+        IterableApi.initialize(getApplicationContext(),"<apiKey>",config);
 
     }
 
