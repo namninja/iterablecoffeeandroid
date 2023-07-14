@@ -81,7 +81,7 @@ public class Application extends android.app.Application {
                 );
 
         IterableConfig config = configBuilder.build();
-        IterableApi.initialize(getApplicationContext(),"69512234b58e403f9359122424959196",config);
+        IterableApi.initialize(getApplicationContext(),"<apiKey>",config);
 
     }
 
