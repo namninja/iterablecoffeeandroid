@@ -74,14 +74,14 @@ public class Application extends android.app.Application {
                     public void onTokenRegistrationFailed(Throwable object) {
                         Log.d("Auth token failure", myToken);
                         if (!myToken.equals("")) {
-                            IterableApi.getInstance().setEmail(email,null);
+                            IterableApi.getInstance().setEmail(email,token);
                         }
                     }
                 }
                 );
 
         IterableConfig config = configBuilder.build();
-        IterableApi.initialize(getApplicationContext(),"<apiKey>",config);
+        IterableApi.initialize(getApplicationContext(),"69512234b58e403f9359122424959196",config);
 
     }
 
