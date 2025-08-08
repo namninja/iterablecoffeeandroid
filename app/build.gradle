@@ -1,11 +1,20 @@
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
 }
 
-android {
-    namespace 'com.reiterablecoffee.iterablecoffee' // Add this line
+// ---- Load secrets from local.properties (not committed) ----
+def props = new Properties()
+def propsFile = rootProject.file("local.properties")
+if (propsFile.exists()) {
+    props.load(new FileInputStream(propsFile))
+}
 
+android {
+    namespace 'com.reiterablecoffee.iterablecoffee'
     compileSdk 33
 
     defaultConfig {
@@ -14,8 +23,27 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // ---- Auto-expose all non-Android props to BuildConfig ----
+        // Skip Android’s own keys that can live in local.properties
+        def skipKeys = ['sdk.dir', 'ndk.dir']
+
+        props.each { k, v ->
+            if (!skipKeys.contains(k)) {
+                // Ensure value is safe for Java string literal
+                def safe = v.toString()
+                        .replace("\\", "\\\\")
+                        .replace("\"", "\\\"")
+                // Assumes keys are valid Java identifiers (YOUR KEYS ARE: EMAIL, API_KEY, etc.)
+                buildConfigField "String", k, "\"${safe}\""
+            }
+        }
+    }
+
+    // ✅ Enable BuildConfig generation
+    buildFeatures {
+        buildConfig true
     }
 
     buildTypes {

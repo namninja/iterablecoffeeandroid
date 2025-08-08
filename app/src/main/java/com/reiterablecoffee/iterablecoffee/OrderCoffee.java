@@ -20,8 +20,8 @@ import java.util.List;
 
 public class OrderCoffee extends AppCompatActivity {
     TextView menuText;
-    String token = IterableApi.getInstance().getAuthToken();
-    String email = "testing.iterableapps@gmail.com";
+    //String token = IterableApi.getInstance().getAuthToken();
+    String email = BuildConfig.EMAIL;
 
     // Create an array of CommerceItem objects
     CommerceItem item1 = new CommerceItem(
@@ -79,7 +79,8 @@ public class OrderCoffee extends AppCompatActivity {
         setContentView(R.layout.activity_order_coffee);
         //Intent intent = getIntent();
         menuText = findViewById(R.id.textMenu);
-        IterableApi.getInstance().setEmail(email, token);
+        //IterableApi.getInstance().setEmail(email, token);
+        IterableApi.getInstance().setEmail(email);
         Button makePurchase = findViewById(R.id.buttonPurchase);
         Button addToCart = findViewById(R.id.buttonAddCart);
         //IterableApi.getInstance().setEmail(email);

@@ -23,7 +23,9 @@ import okhttp3.Response;
 
 public class Application extends android.app.Application {
 
-    String email = "testing.iterableapps@gmail.com";
+    String email = BuildConfig.EMAIL;
+    String apiKey = BuildConfig.API_KEY;
+    String jwtApiKey = BuildConfig.JWT_API_KEY;
     String myToken = "";
     String token = "";
     public void onCreate(){
@@ -81,8 +83,8 @@ public class Application extends android.app.Application {
 //                );
 
         IterableConfig config = configBuilder.build();
-//        IterableApi.initialize(getApplicationContext(),"69512234b58e403f9359122424959196",config);
-        IterableApi.initialize(getApplicationContext(),"63bb465b1b8d4f6180db0e4fd8a0581c",config);
+//        IterableApi.initialize(getApplicationContext(),jwtApiKey,config);
+        IterableApi.initialize(getApplicationContext(),apiKey,config);
 
     }
 

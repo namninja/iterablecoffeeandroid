@@ -17,9 +17,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
-    String email = "testing.iterableapps@gmail.com";
+    String email = BuildConfig.EMAIL;
+    String phoneNumber = BuildConfig.PHONE;
+    String userId = BuildConfig.UUID;
+    String firstName = BuildConfig.FIRSTNAME;
+    String lastName = BuildConfig.LASTNAME;
     private TextView greeting;
-    String token = IterableApi.getInstance().getAuthToken();
+    //String token = IterableApi.getInstance().getAuthToken();
     //String token = PreferenceManager.getInstance(getApplicationContext()).getMyGlobalVariable();
 
     @Override
@@ -33,24 +37,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void logInUser(View view) throws JSONException {
-        //Log.d("MainActivity", "User Logged In");
-        token = IterableApi.getInstance().getAuthToken();
-        Log.d("MA token", "token" + token);
-        if (token == null) {
-            IterableApi.getInstance().setEmail(email);
-        } else {
-            IterableApi.getInstance().setEmail(email, token);
-        }
-
+        Log.d("MainActivity", "User Logged In");
+//        token = IterableApi.getInstance().getAuthToken();
+//        Log.d("MA token", "token" + token);
+//        if (token == null) {
+//            IterableApi.getInstance().setEmail(email);
+//        } else {
+//            IterableApi.getInstance().setEmail(email, token);
+//        }
+        IterableApi.getInstance().setEmail(email);
 
         //UUID
 //        JSONObject dataFields = new JSONObject();
-//        String firstName = "Thor";
-//        String lastName = "Odinson";
-//        String phoneNumber = "+15555555";
-//        String email = "testing.iterableapps@gmail.com";
-//        String userId = "knownAndroid-4444";
-//
 //        dataFields.put("firstName", firstName);
 //        dataFields.put("lastName", lastName);
 //        dataFields.put("email", email);
@@ -79,26 +77,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createNewUser(View view) throws JSONException {
-        //Log.d("MainActivity", "New User Created");
-        if (token == null) {
-            IterableApi.getInstance().setEmail(email);
-        } else {
-            IterableApi.getInstance().setEmail(email, token);
-        }
+        Log.d("MainActivity", "New User Created");
+//        if (token == null) {
+//            IterableApi.getInstance().setEmail(email);
+//        } else {
+//            IterableApi.getInstance().setEmail(email, token);
+//        }
+        IterableApi.getInstance().setEmail(email);
         JSONObject dataFields = new JSONObject();
-        String firstName = "Thor";
-        String lastName = "Odinson";
+
         String favoriteCafeBeverage = "mocha";
-        String phoneNumber = "+15555555";
-        String email = "testing.iterableapps@gmail.com";
-
-
-
-
-
 
         dataFields.put("firstName", firstName);
         dataFields.put("lastName", lastName);
+        dataFields.put("userId", userId);
         dataFields.put("favoriteCafeBeverage", favoriteCafeBeverage);
         dataFields.put("phoneNumber", phoneNumber);
 
