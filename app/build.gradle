@@ -4,6 +4,8 @@ plugins {
 }
 
 android {
+    namespace 'com.reiterablecoffee.iterablecoffee' // Add this line
+
     compileSdk 33
 
     defaultConfig {
@@ -29,18 +31,16 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation platform('com.google.firebase:firebase-bom:32.1.1')
+    implementation platform('com.google.firebase:firebase-bom:33.1.0')
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
-    implementation 'com.iterable:iterableapi:3.4.14'
-    implementation 'com.iterable:iterableapi-ui:3.4.14'
+    implementation 'com.iterable:iterableapi:3.5.2'
+    implementation 'com.iterable:iterableapi-ui:3.5.2'
     implementation 'com.google.android.gms:play-services-cronet:18.0.1'
-    implementation 'com.google.firebase:firebase-messaging:23.1.2'
+    implementation 'com.google.firebase:firebase-messaging:24.0.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
-
 }

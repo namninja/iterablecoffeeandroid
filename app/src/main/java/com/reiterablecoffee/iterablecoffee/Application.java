@@ -32,56 +32,57 @@ public class Application extends android.app.Application {
 
 
         IterableConfig.Builder configBuilder = new IterableConfig.Builder()
-                .setLogLevel(Log.VERBOSE)
-                .setExpiringAuthTokenRefreshPeriod((long) 10)
-                .setAuthHandler(new IterableAuthHandler() {
-                    @Override
-                    public String onAuthTokenRequested() {
+                .setLogLevel(Log.VERBOSE);
+//                .setExpiringAuthTokenRefreshPeriod((long) 10)
+//                .setAuthHandler(new IterableAuthHandler() {
+//                    @Override
+//                    public String onAuthTokenRequested() {
+//
+//                        // Insert your implementation here. Return a token.
+//                        OkHttpClient client = new OkHttpClient().newBuilder().build();
+//                        MediaType mediaType = MediaType.parse("application/json");
+//                        RequestBody body = RequestBody.Companion.create("{\"email\":\"" + email + "\"}", mediaType);
+//                        Request request = new Request.Builder()
+//                                .url("https://iterabledatafeed.herokuapp.com/mobilejwt")
+//                                .method("POST", body)
+//                                .addHeader("Content-Type", "application/json")
+//                                .build();
+//
+//                            try (Response response = client.newCall(request).execute()) {
+//                                assert response.body() != null;
+//                                token = response.body().string();
+//                                token = token.replaceAll("^\"|\"$", "");
+//                                Log.d("AuthHandler token call", token);
+//                                myToken = token;
+//                                //PreferenceManager.getInstance(getApplicationContext()).setMyGlobalVariable(myToken);
+//
+//                                return token;
+//                            } catch (IOException e) {
+//                                throw new RuntimeException(e);
+//                            }
+//
+//
+//                    }
 
-                        // Insert your implementation here. Return a token.
-                        OkHttpClient client = new OkHttpClient().newBuilder().build();
-                        MediaType mediaType = MediaType.parse("application/json");
-                        RequestBody body = RequestBody.Companion.create("{\"email\":\"" + email + "\"}", mediaType);
-                        Request request = new Request.Builder()
-                                .url("https://iterabledatafeed.herokuapp.com/mobilejwt")
-                                .method("POST", body)
-                                .addHeader("Content-Type", "application/json")
-                                .build();
-
-                            try (Response response = client.newCall(request).execute()) {
-                                assert response.body() != null;
-                                token = response.body().string();
-                                token = token.replaceAll("^\"|\"$", "");
-                                Log.d("AuthHandler token call", token);
-                                myToken = token;
-                                //PreferenceManager.getInstance(getApplicationContext()).setMyGlobalVariable(myToken);
-
-                                return token;
-                            } catch (IOException e) {
-                                throw new RuntimeException(e);
-                            }
-
-
-                    }
-
-                    @Override
-                    public void onTokenRegistrationSuccessful(String authToken) {
-                        Log.d("Auth token success", authToken);
-
-                    }
-
-                    @Override
-                    public void onTokenRegistrationFailed(Throwable object) {
-                        Log.d("Auth token failure", myToken);
-                        if (!myToken.equals("")) {
-                            IterableApi.getInstance().setEmail(email,token);
-                        }
-                    }
-                }
-                );
+//                    @Override
+//                    public void onTokenRegistrationSuccessful(String authToken) {
+//                        Log.d("Auth token success", authToken);
+//
+//                    }
+//
+//                    @Override
+//                    public void onTokenRegistrationFailed(Throwable object) {
+//                        Log.d("Auth token failure", myToken);
+//                        if (!myToken.equals("")) {
+//                            IterableApi.getInstance().setEmail(email,token);
+//                        }
+//                    }
+//                }
+//                );
 
         IterableConfig config = configBuilder.build();
-        IterableApi.initialize(getApplicationContext(),"<apiKey>",config);
+//        IterableApi.initialize(getApplicationContext(),"69512234b58e403f9359122424959196",config);
+        IterableApi.initialize(getApplicationContext(),"63bb465b1b8d4f6180db0e4fd8a0581c",config);
 
     }
 

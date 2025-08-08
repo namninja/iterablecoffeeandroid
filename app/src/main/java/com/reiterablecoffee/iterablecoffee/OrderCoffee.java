@@ -83,7 +83,6 @@ public class OrderCoffee extends AppCompatActivity {
         Button makePurchase = findViewById(R.id.buttonPurchase);
         Button addToCart = findViewById(R.id.buttonAddCart);
         //IterableApi.getInstance().setEmail(email);
-
     }
 
     public void addToCart(View view) {

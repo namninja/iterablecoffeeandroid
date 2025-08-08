@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         IterableApi.getInstance().track(
                 "login successful"
         );
-
+        
         Snackbar.make(greeting, "login successful", Snackbar.LENGTH_LONG)
                 .setAction("More", v -> {
                             Toast.makeText(MainActivity.this, email, Toast.LENGTH_LONG).show();
